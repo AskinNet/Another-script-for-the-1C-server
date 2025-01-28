@@ -1,0 +1,52 @@
+
+# Внимание 
+# для строк оформленных в ковычки, если это каталог, то косая черта должна быть двойная
+
+serverRAS:
+  1cRasDemonName: "1C:Enterprise 8.3 Remote Server"  # имя службы RAS
+  servernameRAS: "IPIITC213-00020"                   #
+  portRAS: 1545                                      #
+  useDemonRAS: true                                  # по умолчанию используется служба RAS, если её нет, он запускается вручную, ЛОКАЛЬНО!
+  mportRAS: 56532                                    # порт на котором динамически запуститься RAS
+  pathToBin1c: "C:\\Program Files\\1cv8"           # пусть к исполняемым файлам 1с. складывается из этого пути и version 
+
+server1c:
+  server: "IPIITC213-00020"
+  port: 1541
+  version: 8.3.25.1445
+  1cDemonName:    "1C:Enterprise 8.3 Server Agent (x86-64)" # имя службы 1с 
+  Path1cService: "C:\\erver1C\\reg_1541" 
+  lockTime: 300                     # блокировка баз в секундах (15*60)
+  clusterAdmin:                     #
+  clusterAdminPassword:             #
+  bases:      
+    erp:                            
+      user: "obmen"                 
+      password: "obmen"             
+      allowKey: 100
+      1cstorages:
+        erp: # хранилище основной конфигурации называется как база (это важно)
+          path: "\\\\aks-web\\storage$\\ERP\\MAIN"
+          user: "ПетровАВ"
+          pass: ""
+          name: "" 
+        Extention1: # расширение ХБК
+          path: "\\\\aks-web\\ERP\\ХБК"
+          user: "ПетровАВ"
+          pass: ""
+          name: ХБК   
+        Extention2: # расширение УАТ
+          path: "\\\\aks-web\\storage$\\ERP\\УАТ"
+          user: "ПетровАВ"
+          pass: ""
+          name: УАТ # расширение УАТ
+        Extention3: 
+          path: "\\\\aks-web\\storage$\\ERP\\КоннекторВнешнихБазДанных"
+          user: "ПетровАВ"
+          pass: ""
+          name: "КоннекторВнешнихБазДанных"                             
+
+#serverSQL:
+#  user: user1c
+#  password: 888888
+
