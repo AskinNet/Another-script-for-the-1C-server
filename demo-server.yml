@@ -1,0 +1,52 @@
+
+# Внимание 
+# для строк оформленных в ковычки, если это каталог, то косая черта должна быть двойная
+
+serverRAS:
+  1cRasDemonName: "1C:Enterprise 8.3 Remote Server"  # имя службы RAS
+  servernameRAS: "demo-server"                   #
+  portRAS: 1545                                      #
+  useDemonRAS: true                                  # по умолчанию используется служба RAS, если её нет, он запускается вручную, ЛОКАЛЬНО!
+  mportRAS: 56532                                    # порт на котором динамически запуститься RAS
+  pathToBin1c: "C:\\Program Files\\1cv8"           # пусть к исполняемым файлам 1с. складывается из этого пути и version 
+
+server1c:
+  server: "demo-server"
+  port: 1541
+  version: 8.3.25.1445
+  1cDemonName:    "1C:Enterprise 8.3 Server Agent (x86-64)" # имя службы 1с 
+  Path1cService: "C:\\erver1C\\reg_1541" 
+  lockTime: 300                     # блокировка баз в секундах (15*60)
+  clusterAdmin:                     #
+  clusterAdminPassword:             #
+  bases:      
+    erp:                            
+      user: "demo"                 
+      password: "demo"             
+      allowKey: 100
+      1cstorages:
+        erp: # хранилище основной конфигурации называется как база (это важно)
+          path: "\\\\demo-storage\\storage$\\ERP\\MAIN"
+          user: "demo"
+          pass: ""
+          name: "" 
+        Extention1: # расширение DemoExt1
+          path: "\\\\demo-storage\\ERP\\DemoExt1"
+          user: "demo"
+          pass: ""
+          name: DemoExt1   
+        Extention2: # расширение DemoExt2
+          path: "\\\\demo-storage\\storage$\\ERP\\DemoExt2"
+          user: "demo"
+          pass: ""
+          name: DemoExt2 # расширение DemoExt2
+        Extention3: 
+          path: "\\\\demo-storage\\storage$\\ERP\\DemoExt3"
+          user: "demo"
+          pass: ""
+          name: "DemoExt3"                             
+
+#serverSQL:
+#  user: user1c
+#  password: demo-password
+
