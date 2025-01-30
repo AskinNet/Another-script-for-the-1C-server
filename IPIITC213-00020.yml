@@ -45,7 +45,12 @@ server1c:
           path: "\\\\aks-web\\storage$\\ERP\\КоннекторВнешнихБазДанных"
           user: "ПетровАВ"
           pass: ""
-          name: "КоннекторВнешнихБазДанных"                             
+          name: "КоннекторВнешнихБазДанных" 
+        Extention4: 
+          path: "\\\\aks-web\\storage$\\ERP\\ВнДоработки"
+          user: "ПетровАВ"
+          pass: ""
+          name: "ВнДоработки"                                       
 
 #serverSQL:
 #  user: user1c
