@@ -45,7 +45,12 @@ server1c:
           path: "\\\\demo-storage\\storage$\\ERP\\DemoExt3"
           user: "demo"
           pass: ""
-          name: "DemoExt3"                             
+          name: "DemoExt3" 
+        Extention4: 
+          path: "\\\\demo-storage\\storage$\\ERP\\DemoExt4"
+          user: "demo"
+          pass: ""
+          name: "DemoExt4"                                       
 
 #serverSQL:
 #  user: user1c
