@@ -6,7 +6,7 @@ serverRAS:
   1cRasDemonName: "1C:Enterprise 8.3 Remote Server"  # имя службы RAS
   servernameRAS: "IPIITC213-00020"                   #
   portRAS: 1545                                      # порт RAS
-  useDemonRAS: false                                  # по умолчанию используется служба RAS, если её нет, он запускается вручную, ЛОКАЛЬНО!
+  useDemonRAS: false                                 # по умолчанию используется служба RAS, если её нет, он запускается вручную, ЛОКАЛЬНО!
   mportRAS: 56532                                    # порт на котором динамически запуститься RAS
   pathToBin1c: "C:\\Program Files\\1cv8"             # пусть к исполняемым файлам 1с. складывается из этого пути и version 
 
@@ -16,10 +16,11 @@ server1c:
   portCluster1C: 1540                                # порт на котором запущен кластер 1С  
   version: 8.3.25.1445
   1cDemonName:    "1C:Enterprise 8.3 Server Agent (x86-64)" # имя службы 1С 
-  Path1cService: "C:\\erver1C\\reg_1541" 
+  Path1cService:  "C:\\server1C\\reg_1541" 
   lockTime: 3000                    # блокировка баз в секундах (15*60)
-  clusterAdmin:                     #
-  clusterAdminPassword:             #
+  clusterAdmin: ""                     #
+  clusterAdminPassword: ""             #
+  restartServiceBefore: true
   bases:      
     erp:                            
       user: "obmen"                 
