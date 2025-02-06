@@ -2,6 +2,8 @@
 # Внимание! 
 # для строк оформленных в ковычки, если это каталог, то косая черта должна быть двойная
 
+batchМode: 'updateFromStorage,lock,restart,updateDB,unlock'
+
 serverRAS:
   1cRasDemonName: "1C:Enterprise 8.3 Remote Server"  # имя службы RAS
   servernameRAS: "IPIITC213-00020"                   #
