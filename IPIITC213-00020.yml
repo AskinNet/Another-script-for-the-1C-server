@@ -1,6 +1,5 @@
 
-# Внимание! 
-# для строк оформленных в ковычки, если это каталог, то косая черта должна быть двойная
+# проверить файл можно онлайн тут: https://yamlchecker.com
 
 batchМode: 'updateFromStorage,lock,restart,updateDB,unlock'
 
