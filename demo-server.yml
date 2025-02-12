@@ -1,7 +1,8 @@
 
 # проверить файл можно онлайн тут: https://yamlchecker.com
 
-batchМode: 'updateFromStorage,lock,restart,updateDB,unlock'
+batchМode: 'lock,restart,updateDB,unlock'
+debug: false
 
 serverRAS:
   1cRasDemonName: "1C:Enterprise 8.3 Remote Server"  # имя службы RAS
@@ -21,14 +22,15 @@ server1c:
   lockTime: 3000                    # блокировка баз в секундах (15*60)
   clusterAdmin: ""                     #
   clusterAdminPassword: ""             #
-  restartServiceBefore: true
+
   bases:      
     erp:                            
       user: "demo"                 
       password: "demo"             
       allowKey: 100
       1cstorages:
-        erp: # хранилище основной конфигурации называется как база (это важно)
+        # Имя хранилища основной конфигурации называться Main, все остальные хранилища, как угодно.
+        erp: 
           path: "\\\\demo-storage\\storage$\\ERP\\MAIN"
           user: "demo"
           pass: ""
