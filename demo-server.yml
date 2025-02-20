@@ -1,7 +1,7 @@
 
 # проверить файл можно онлайн тут: https://yamlchecker.com
 
-batchМode: 'lock,restart,updateDB,unlock'
+batchМode: 'lock,updateFromStorage,restart,updateDB,unlock'
 debug: false
 
 serverRAS:
@@ -31,27 +31,27 @@ server1c:
       1cstorages:
         # Имя хранилища основной конфигурации называться Main, все остальные хранилища, как угодно.
         erp: 
-          path: "\\\\demo-storage\\storage$\\ERP\\MAIN"
+          path: "tcp://demo-storage/ERP/MAIN"
           user: "demo"
           pass: ""
           name: "" 
         Extention1: # расширение DemoExt1
-          path: "\\\\demo-storage\\ERP\\DemoExt1"
+          path: "tcp://demo-storage/ERP/DemoExt1"
           user: "demo"
           pass: ""
           name: DemoExt1   
         Extention2: # расширение DemoExt2
-          path: "\\\\demo-storage\\storage$\\ERP\\DemoExt2"
+          path: "tcp://demo-storage/ERP/DemoExt2"
           user: "demo"
           pass: ""
           name: DemoExt2 # расширение DemoExt2
         Extention3: 
-          path: "\\\\demo-storage\\storage$\\ERP\\DemoExt3"
+          path: "tcp://demo-storage/ERP/DemoExt3"
           user: "demo"
           pass: ""
           name: "DemoExt3" 
         Extention4: 
-          path: "\\\\demo-storage\\storage$\\ERP\\DemoExt4"
+          path: "tcp://demo-storage/ERP/DemoExt4"
           user: "demo"
           pass: ""
           name: "DemoExt4"                                       
