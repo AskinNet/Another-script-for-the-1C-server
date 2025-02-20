@@ -1,7 +1,7 @@
 
 # проверить файл можно онлайн тут: https://yamlchecker.com
 
-batchМode: 'lock,restart,updateDB,unlock'
+batchМode: 'lock,updateFromStorage,restart,updateDB,unlock'
 debug: false
 
 serverRAS:
@@ -31,27 +31,27 @@ server1c:
       1cstorages:
         # Имя хранилища основной конфигурации называться Main, все остальные хранилища, как угодно.
         erp: 
-          path: "\\\\aks-web\\storage$\\ERP\\MAIN"
+          path: "tcp://aks-web/ERP/MAIN"
           user: "ПетровАВ"
           pass: ""
           name: "" 
         Extention1: # расширение ХБК
-          path: "\\\\aks-web\\ERP\\ХБК"
+          path: "tcp://aks-web/ERP/ХБК"
           user: "ПетровАВ"
           pass: ""
           name: ХБК   
         Extention2: # расширение УАТ
-          path: "\\\\aks-web\\storage$\\ERP\\УАТ"
+          path: "tcp://aks-web/ERP/УАТ"
           user: "ПетровАВ"
           pass: ""
           name: УАТ # расширение УАТ
         Extention3: 
-          path: "\\\\aks-web\\storage$\\ERP\\КоннекторВнешнихБазДанных"
+          path: "tcp://aks-web/ERP/КоннекторВнешнихБазДанных"
           user: "ПетровАВ"
           pass: ""
           name: "КоннекторВнешнихБазДанных" 
         Extention4: 
-          path: "\\\\aks-web\\storage$\\ERP\\ВнДоработки"
+          path: "tcp://aks-web/ERP/ВнДоработки"
           user: "ПетровАВ"
           pass: ""
           name: "ВнДоработки"                                       
