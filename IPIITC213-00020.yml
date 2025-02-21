@@ -4,14 +4,6 @@
 batchМode: 'lock,updateFromStorage,restart,updateDB,unlock'
 debug: false
 
-serverRAS:
-  1cRasDemonName: "1C:Enterprise 8.3 Remote Server"  # имя службы RAS
-  servernameRAS: "IPIITC213-00020"                   #
-  portRAS: 1545                                      # порт RAS
-  useDemonRAS: false                                 # по умолчанию используется служба RAS, если её нет, он запускается вручную, ЛОКАЛЬНО!
-  mportRAS: 56532                                    # порт на котором динамически запуститься RAS
-  pathToBin1c: "C:\\Program Files\\1cv8"             # пусть к исполняемым файлам 1с. складывается из этого пути и version 
-
 server1c:
   server: "IPIITC213-00020"
   port: 1541                                         # основной порт который обслуживает соеднинения с кластером 1С
@@ -29,32 +21,40 @@ server1c:
       password: "obmen"             
       allowKey: 100
       1cstorages:
-        # Имя хранилища основной конфигурации называться Main, все остальные хранилища, как угодно.
-        erp: 
+      # у расширения должно быть имя
+        Storage1: 
           path: "tcp://aks-web/ERP/MAIN"
           user: "ПетровАВ"
           pass: ""
-          name: "" 
-        Extention1: # расширение ХБК
+        Storage2: # расширение ХБК
           path: "tcp://aks-web/ERP/ХБК"
           user: "ПетровАВ"
           pass: ""
           name: ХБК   
-        Extention2: # расширение УАТ
+        Storage3: # расширение УАТ
           path: "tcp://aks-web/ERP/УАТ"
           user: "ПетровАВ"
           pass: ""
           name: УАТ # расширение УАТ
-        Extention3: 
+        Storage4: 
           path: "tcp://aks-web/ERP/КоннекторВнешнихБазДанных"
           user: "ПетровАВ"
           pass: ""
           name: "КоннекторВнешнихБазДанных" 
-        Extention4: 
+        Storage5: 
           path: "tcp://aks-web/ERP/ВнДоработки"
           user: "ПетровАВ"
           pass: ""
           name: "ВнДоработки"                                       
+
+serverRAS:
+  1cRasDemonName: "1C:Enterprise 8.3 Remote Server"  # имя службы RAS
+  serverRAS: "IPIITC213-00020"                   #
+  portRAS: 1545                                      # порт RAS
+  useDemonRAS: false                                 # по умолчанию используется служба RAS, если её нет, он запускается вручную, ЛОКАЛЬНО!
+  mportRAS: 56532                                    # порт на котором динамически запуститься RAS
+  pathToBin1c: "C:\\Program Files\\1cv8"             # пусть к исполняемым файлам 1с. складывается из этого пути и version 
+  RestartRas: false                                  # при перезапуске сервер нужно ли рестартовать RAS
 
 #serverSQL:
 #  user: user1c
