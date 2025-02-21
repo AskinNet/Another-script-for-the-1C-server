@@ -4,14 +4,6 @@
 batchМode: 'lock,updateFromStorage,restart,updateDB,unlock'
 debug: false
 
-serverRAS:
-  1cRasDemonName: "1C:Enterprise 8.3 Remote Server"  # имя службы RAS
-  servernameRAS: "demo-server"                   #
-  portRAS: 1545                                      # порт RAS
-  useDemonRAS: false                                 # по умолчанию используется служба RAS, если её нет, он запускается вручную, ЛОКАЛЬНО!
-  mportRAS: 56532                                    # порт на котором динамически запуститься RAS
-  pathToBin1c: "C:\\Program Files\\1cv8"             # пусть к исполняемым файлам 1с. складывается из этого пути и version 
-
 server1c:
   server: "demo-server"
   port: 1541                                         # основной порт который обслуживает соеднинения с кластером 1С
@@ -29,32 +21,40 @@ server1c:
       password: "demo"             
       allowKey: 100
       1cstorages:
-        # Имя хранилища основной конфигурации называться Main, все остальные хранилища, как угодно.
-        erp: 
+      # у расширения должно быть имя
+        Storage1: 
           path: "tcp://demo-storage/ERP/MAIN"
           user: "demo"
           pass: ""
-          name: "" 
-        Extention1: # расширение DemoExt1
+        Storage2: # расширение DemoExt1
           path: "tcp://demo-storage/ERP/DemoExt1"
           user: "demo"
           pass: ""
           name: DemoExt1   
-        Extention2: # расширение DemoExt2
+        Storage3: # расширение DemoExt2
           path: "tcp://demo-storage/ERP/DemoExt2"
           user: "demo"
           pass: ""
           name: DemoExt2 # расширение DemoExt2
-        Extention3: 
+        Storage4: 
           path: "tcp://demo-storage/ERP/DemoExt3"
           user: "demo"
           pass: ""
           name: "DemoExt3" 
-        Extention4: 
+        Storage5: 
           path: "tcp://demo-storage/ERP/DemoExt4"
           user: "demo"
           pass: ""
           name: "DemoExt4"                                       
+
+serverRAS:
+  1cRasDemonName: "1C:Enterprise 8.3 Remote Server"  # имя службы RAS
+  serverRAS: "demo-server"                   #
+  portRAS: 1545                                      # порт RAS
+  useDemonRAS: false                                 # по умолчанию используется служба RAS, если её нет, он запускается вручную, ЛОКАЛЬНО!
+  mportRAS: 56532                                    # порт на котором динамически запуститься RAS
+  pathToBin1c: "C:\\Program Files\\1cv8"             # пусть к исполняемым файлам 1с. складывается из этого пути и version 
+  RestartRas: false                                  # при перезапуске сервер нужно ли рестартовать RAS
 
 #serverSQL:
 #  user: user1c
