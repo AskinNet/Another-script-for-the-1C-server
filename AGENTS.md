@@ -77,6 +77,7 @@ Copy an example (`demo-server.yml`) to `<host>.yml` and fill it in. Real configs
 | `server1c.1cDemonName` | ragent Windows service name (used by `restart`) |
 | `server1c.Path1cService` | cluster registry dir (`...\reg_1541`); `restart` deletes `SNCCNTX*`/`STT*` there. Must not be empty |
 | `server1c.lockTime` | lock duration, seconds |
+| `server1c.restartWaitSec` | optional, default 120: how long `restart` waits for the cluster to answer (retry every 5 s); exit code 1 if it does not |
 | `server1c.clusterAdmin`, `clusterAdminPassword` | cluster administrator, empty if none |
 | `server1c.bases.<name>.user`, `password` | infobase administrator (required if the infobase has users) |
 | `server1c.bases.<name>.allowKey` | permission code to enter a locked infobase |
