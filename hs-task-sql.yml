@@ -20,7 +20,7 @@ server1c:
 
   bases:
     task-sql:
-      user: ""
+      user: "Администратор"
       password: ""
       allowKey: 777
 
