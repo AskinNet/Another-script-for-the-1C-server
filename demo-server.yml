@@ -5,7 +5,7 @@ batchМode: 'lock,updateFromStorage,restart,updateDB,unlock'
 debug: false
 
 server1c:
-  server: "IPIITC213-00020"
+  server: "demo-server"
   port: 1541                                         # основной порт который обслуживает соеднинения с кластером 1С
   portCluster1C: 1540                                # порт на котором запущен кластер 1С  
   version: 8.3.25.1445
@@ -18,39 +18,39 @@ server1c:
 
   bases:      
     erp:                            
-      user: "obmen"                 
-      password: "obmen"             
+      user: "demo"                 
+      password: "demo-password"             
       allowKey: 100
       1cstorages:
       # у расширения должно быть имя
         Storage1: 
-          path: "tcp://aks-web/ERP/MAIN"
-          user: "ПетровАВ"
+          path: "tcp://demo-storage/ERP/MAIN"
+          user: "demo"
           pass: ""
-        Storage2: # расширение ХБК
-          path: "tcp://aks-web/ERP/ХБК"
-          user: "ПетровАВ"
+        Storage2: # расширение DemoExt1
+          path: "tcp://demo-storage/ERP/DemoExt1"
+          user: "demo"
           pass: ""
-          name: ХБК   
-        Storage3: # расширение УАТ
-          path: "tcp://aks-web/ERP/УАТ"
-          user: "ПетровАВ"
+          name: DemoExt1   
+        Storage3: # расширение DemoExt2
+          path: "tcp://demo-storage/ERP/DemoExt2"
+          user: "demo"
           pass: ""
-          name: УАТ # расширение УАТ
+          name: DemoExt2 # расширение DemoExt2
         Storage4: 
-          path: "tcp://aks-web/ERP/КоннекторВнешнихБазДанных"
-          user: "ПетровАВ"
+          path: "tcp://demo-storage/ERP/DemoExt3"
+          user: "demo"
           pass: ""
-          name: "КоннекторВнешнихБазДанных" 
+          name: "DemoExt3" 
         Storage5: 
-          path: "tcp://aks-web/ERP/ВнДоработки"
-          user: "ПетровАВ"
+          path: "tcp://demo-storage/ERP/DemoExt4"
+          user: "demo"
           pass: ""
-          name: "ВнДоработки"                                       
+          name: "DemoExt4"                                       
 
 serverRAS:
   1cRasDemonName: "1C:Enterprise 8.3 Remote Server"  # имя службы RAS
-  serverRAS: "IPIITC213-00020"                   #
+  serverRAS: "demo-server"                   #
   portRAS: 1545                                      # порт RAS
   useDemonRAS: false                                 # по умолчанию используется служба RAS, если её нет, он запускается вручную, ЛОКАЛЬНО!
   mportRAS: 56532                                    # порт на котором динамически запуститься RAS
@@ -58,6 +58,6 @@ serverRAS:
   RestartRas: false                                  # при перезапуске сервер нужно ли рестартовать RAS
 
 #serverSQL:
-#  user: user1c
-#  password: 888888
+#  user: demo
+#  password: demo-password
 

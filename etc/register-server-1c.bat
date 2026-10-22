@@ -3,8 +3,8 @@ chcp 1251
 rem %1 Ч полный номер версии 1—:ѕредпри€ти€
 rem %2 Ч первые две цифры номеров портов. ƒл€ портов 1540,1541,1560:1591 Ч это цифра 15
 rem %3 Ч каталог с данными реестра кластера
-set SrvUserName=1CServer1@aks.ru
-set SrvUserPwd="3JtY97SnCNG5"
+set SrvUserName=demo-user@demo.local
+set SrvUserPwd="demo-password"
 set RangePort=%260:%291
 set BasePort=%241
 set CtrlPort=%240

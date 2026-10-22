@@ -3,8 +3,8 @@ chcp 1251
 rem %1 - полный номер версии 1С:Предприятия
 rem %2 — первые две цифры номеров портов. Для портов 1540,1541,1560:1591 — это цифра 15
 
-set SrvUserName=1CServer1@aks.ru
-set SrvUserPwd="3JtY97SnCNG5"
+set SrvUserName=demo-user@demo.local
+set SrvUserPwd="demo-password"
 set CtrlPort=%240
 set AgentName=localhost
 set RASPort=%245
