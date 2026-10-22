@@ -1,3 +1,4 @@
 *.log
 *.bak
 tests.yml
+oscript_modules/
