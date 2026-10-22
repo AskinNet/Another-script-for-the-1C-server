@@ -6,11 +6,12 @@ debug: false
 
 serverRAS:
   1cRasDemonName: "1C:Enterprise 8.3 Remote Server"  # имя службы RAS
-  servernameRAS: "IPIITC213-00020"                   #
+  serverRAS: "IPIITC213-00020"                   #
   portRAS: 1545                                      # порт RAS
   useDemonRAS: true                                  # по умолчанию используется служба RAS
   mportRAS: 32434                                    # порт на котором динамически запуститься RAS
-  pathToBin1c: "C:\\Program Files\\1cv8"             # пусть к исполняемым файлам 1с. складывается из этого пути и version 
+  RestartRas: false                                  # при перезапуске сервера нужно ли рестартовать RAS
+  pathToBin1c: 'C:\Program Files\1cv8'           # пусть к исполняемым файлам 1с. складывается из этого пути и version 
 
 server1c:
   server: "IPIITC213-00020"
@@ -18,7 +19,8 @@ server1c:
   portCluster1C: 1540                                # порт на котором запущен кластер 1С  
   version: 8.3.25.1445
   1cDemonName:    "1C:Server 1540"                  # имя службы 1С 
-  Path1cService:  "C:\\server1C\\reg_1541" 
+  # пути Windows - в одинарных кавычках: в двойных oscript-yaml дважды раскрывает "\\r", "\\t", "\\n" (\\reg -> CR+eg)
+  Path1cService:  'C:\server1C\reg_1541'
   lockTime: 900                                     # блокировка баз в секундах (15*60)
   clusterAdmin: ""                                  #
   clusterAdminPassword: ""                          #
@@ -29,14 +31,13 @@ server1c:
       password: "obmen"             
       allowKey: 100
       1cstorages:
-        # Хранилище основной конфигурации называться Main, все остальные хранилища, как угодно.
+        # Хранилище основной конфигурации - без поля name, у хранилищ расширений name обязателен.
         Storage1:  
-          path: "D:\\temp\\testStorage\\main"
+          path: 'D:\temp\testStorage\main'
           user: "Администратор"
           pass: "1"
-          name: "Main" # хранилище основной конфигурации (не менять)).
         Storage2: # расширение ХБК
-          path: "D:\\temp\\testStorage\\ext1"
+          path: 'D:\temp\testStorage\ext1'
           user: "Администратор"
           pass: "1"
           name: флАвтоЗадачи   
