@@ -117,8 +117,28 @@ Exit code 1 on any error; details in `svc1c.log`. For a schedule use `batch.bat`
   `ИнформационнаяБаза.os:473` fails. Fixed by `install.ps1`; re-run it after every `opm install`/update.
 - `rac` prints OEM-encoded text on Windows; the script sets `RAC_ENCODING=OEM` itself.
 
+## Secrets
+
+This repository is **public**. Its history was rewritten on 2026-10-22 to remove leaked credentials; do not reintroduce them.
+
+- Real configs live only on the target host, next to the script, and are not committed. Name them `*.local.yml`
+  (ignored by git) or keep them outside the repo and pass the path as the first argument.
+- Committed examples use placeholders only: user `demo`, password `demo-password`, hosts `demo-server` / `demo-storage`,
+  service account `demo-user@demo.local`, extensions `DemoExt1..N`.
+- `etc\register-*.bat` take the service account from `SrvUserName` / `SrvUserPwd`: edit them on the host, never commit the edit.
+- Do not commit `.lnk` shortcuts, logs (`svc1c*.log`), `oscript_modules/` or `*.bak` copies of configs: they leak host names,
+  SIDs, paths and passwords.
+- Before every commit run the check below; it must print nothing:
+
+  ```bash
+  git diff --cached -U0 | grep -E '^\+' | grep -i -E '(pass(word)?|pwd)[a-z]*["]?\s*[:=]\s*"?[^" ]' | grep -v -E 'demo-password|""|\$\{|%[A-Za-z]+%'
+  ```
+
+- If a secret was pushed anyway: tell the owner to rotate it first (the history is public and may be cloned or forked),
+  then rewrite history with `git filter-repo --replace-text` and force-push only with the owner's explicit approval.
+
 ## Rules for agents
 
 - Work in a branch `agent/<task>-<yyyymmdd>`, open a PR; do not push to `main`.
-- Never commit real hosts, users or passwords; examples use `demo`, `demo-server`, `demo-password`.
+- Never commit real hosts, users or passwords (see **Secrets**).
 - Do not touch infobases that are not listed in the test config.
